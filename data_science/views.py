@@ -8,3 +8,6 @@ def index(request):
 
 def stats(request):
     return render(request, "data_science/stats.html")
+
+def descriptive_stats(request):
+    return render(request, "data_science/statistics/descriptive_stats.html")

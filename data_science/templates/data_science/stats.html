@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block header_content %}
     <ul>
-        <li> HEJ FROM Statistics page. </li>
+        <li> <a href='{% url "data_science:ds" %}'> Descriptive Statistics </a> </li>
+        <li> Inferential Statistics </li>
+        <li> Probability Distributions </li>
+        <li> Regression Analysis </li>
+        <li> Sampling Techniques </li>
     </ul>
 {% endblock header_content %}
 {% block main_content %}{% endblock main_content %}
