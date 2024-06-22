@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="DataPitch Web Application">
+    <meta name="keywords" content="HTML, CSS, JavaScript and Django">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+       {% block header_content %}
+       {% endblock header_content %}
+    </header>
+    <main id="main_container">
+        {% block main_content %}
+        {% endblock main_content %}
+    </main>
+    <footer>
+        {% block footer_content %}
+        {% endblock footer_content %}
+    </footer>
+</body>
+</html>
