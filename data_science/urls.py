@@ -4,5 +4,6 @@ from . import views
 
 app_name = "data_science"
 urlpatterns = [
-    path("", views.index, name="dsIndex")
+    path("", views.index, name="dsIndex"),
+    path("statistics/", views.stats, name="stats")
 ]
