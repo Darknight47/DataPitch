@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # My Own APPS
+    'data_science',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
