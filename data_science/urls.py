@@ -6,5 +6,5 @@ app_name = "data_science"
 urlpatterns = [
     path("", views.index, name="dsIndex"),
     path("statistics/", views.stats, name="stats"),
-    path("statistics/ds", views.descriptive_stats, name="ds")
+    path("statistics/descriptive-statistics", views.descriptive_stats, name="desc_stats")
 ]
