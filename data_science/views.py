@@ -3,4 +3,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Welcome To DataScience Course")
+    return render(request, "data_science/index.html")
+    #return HttpResponse("Welcome To DataScience Course")

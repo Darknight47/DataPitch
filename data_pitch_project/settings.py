@@ -57,7 +57,7 @@ ROOT_URLCONF = 'data_pitch_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"], #Changing the directory, so that html files can extend the base.html that is located in the templates folder.
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
