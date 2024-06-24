@@ -14,14 +14,16 @@
         It's like finding the heart of the data or the value around which most other values cluster.
         There are <b> three common measures </b> of central tendency:
     </p>
-    <h4> The Mean </h4>
+    <h4> 1. The Mean </h4>
     <p> 
         The mean is the most common way to summarize the center of a distribution.
     </p>
+    <p>Mean (𝑥̅) = Σxᵢ / n</p>
+
     <p>
-        <b> What is the mean or average age of the players in the Arsenal's squad? </b>
+        <b> What is the mean or average age of the players in the Arsenal's first squad? </b>
     </p>
-    <table>
+    <table border="1px">
         <tr>
           <th>Players:</th>
           <td>David Raya</td>
@@ -52,6 +54,69 @@
         </tr>
     </table>
 
-    <p>Mean (𝑥̅) = Σxᵢ / n</p>
+    <p> The mean or average age of the Arsenal's first squad is computed by summing up all the ages or values and then dividing
+        it by the total number of players.
+    </p>
+
+    <p> Mean = (28 + 26 + 23 + 26 + 23 + 25 + 31 + 25 + 25 + 23 + 22) / 11 </p>
+    <p> Sum of numbers: 28 + 26 + 23 + 26 + 23 + 25 + 31 + 25 + 25 + 23 + 22 = 277 </p>
+    <p> Number of items: 11 </p>
+    <p> Mean = 277 / 11 = 25.18 </p>
+    <p>  the mean or average age of the players in the Arsenal's first squad is approximately <b> 25.18 </b> </p>
+
+    <h4> 2. The Median </h4> 
+    <p> The value that is literally in the middle, with half the values below it and the other half above it. 
+        The median has the same units as the data. 
+    </p>
+    <p>
+        <b> What is the median age of the players in Arsenal's first squad? </b>
+    </p>
+    <h5> Steps to Calculate the Median </h5>
+    <ul>
+        <li> Order the Ages: Sort the ages in ascending order. </li>
+        <li> Find the Median </li>
+        <ul> 
+            <li> When the number of observations (n) is even, there are two middle values; (n/2) + ((n/2) + 1)</li>
+        </ul>
+        <ul> 
+            <li> When the number of observations (n) is odd, the median is the middle number in the ordered list and 
+                we find this value in the (n + 1) / 2 position.
+            </li>
+        </ul>
+    </ul>
+
+    <table border="1px">
+        <tr>
+            <th>Players:</th>
+            <td>Bukayo Saka</td>
+            <td>William Saliba</td>
+            <td>Jurrien Timber</td>
+            <td>Gabriel Martinelli</td>
+            <td>Kai Havertz</td>
+            <td>Martin Ødegaard</td>
+            <td>Declan Rice</td>
+            <td>Ben White</td>
+            <td>Gabriel Magalhães</td>
+            <td>David Raya</td>
+            <td>Thomas Partey</td>
+        </tr>
+        <tr>
+            <th>Age:</th>
+            <td>22</td>
+            <td>23</td>
+            <td>23</td>
+            <td>23</td>
+            <td>25</td>
+            <td>25</td>
+            <td>25</td>
+            <td>26</td>
+            <td>26</td>
+            <td>28</td>
+            <td>31</td>
+          </tr>
+    </table>
+    <p> The number of observation (n) is 11 which is an odd number, therefore the median is in the (11 + 1)/2 = 6th position.
+        The median age therefore is <b> 25 </b>.
+    </p>
 {% endblock main_content %}
 {% block footer_content %}{% endblock footer_content %}
