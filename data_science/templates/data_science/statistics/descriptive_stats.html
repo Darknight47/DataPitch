@@ -2,5 +2,56 @@
 {% block header_content %}
     <h1> HEJ FROM DESC-STATS </h1>
 {% endblock header_content %}
-{% block main_content %}{% endblock main_content %}
+{% block main_content %}
+    <h1> Descriptive Statistics </h1>
+    <p> Descriptive statistics describe and summarize the characteristics of a dataset or sample data.
+        By using descriptive statistics, we can summarize large amounts of observed data in a meaningful way. 
+        While descriptive statistics are powerful, they have limitations—for example, summarizing data means losing some granularity.
+    </p>
+    <h3> Measure of central tendency </h3>
+    <p>
+        A measure of central tendency represents the center point or typical value of a dataset. 
+        It's like finding the heart of the data or the value around which most other values cluster.
+        There are <b> three common measures </b> of central tendency:
+    </p>
+    <h4> The Mean </h4>
+    <p> 
+        The mean is the most common way to summarize the center of a distribution.
+    </p>
+    <p>
+        <b> What is the mean or average age of the players in the Arsenal's squad? </b>
+    </p>
+    <table>
+        <tr>
+          <th>Players:</th>
+          <td>David Raya</td>
+          <td>Ben White</td>
+          <td>William Saliba</td>
+          <td>Gabriel Magalhães</td>
+          <td>Jurrien Timber</td>
+          <td>Declan Rice</td>
+          <td>Thomas Partey</td>
+          <td>Martin Ødegaard</td>
+          <td>Kai Havertz</td>
+          <td>Gabriel Martinelli</td>
+          <td>Bukayo Saka</td>
+        </tr>
+        <tr>
+          <th>Age:</th>
+          <td>28</td>
+          <td>26</td>
+          <td>23</td>
+          <td>26</td>
+          <td>23</td>
+          <td>25</td>
+          <td>31</td>
+          <td>25</td>
+          <td>25</td>
+          <td>23</td>
+          <td>22</td>
+        </tr>
+    </table>
+
+    <p>Mean (𝑥̅) = Σxᵢ / n</p>
+{% endblock main_content %}
 {% block footer_content %}{% endblock footer_content %}
