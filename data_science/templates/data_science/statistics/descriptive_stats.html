@@ -204,7 +204,8 @@
         In other words, Spread of the observations or data measures the variation of the data around the central tendency such as the mean.
     </p>
     <p> The The three common measures of the spread of the data are, the range, the variance and the standard deviation </p>
-    
+    <p> NOTE:  Spread, like shape and center, is a general description of the distribution, not a precise quantity</p>
+
     <h4> 1. The Range </h4>
     <p>The range of the data is defined as the difference between the maximum and minimum values: </p>
     <p> <b> Range = maxValue - minValue </b> </p>
@@ -247,24 +248,30 @@
             <td>Gabriel Magalhães</td>
             <td>David Raya</td>
             <td>Thomas Partey</td>
-            <td> Mikel Arteta (coach)</td>
+            <th> Mikel Arteta (coach)</th>
         </tr>
         <tr>
             <th>Age:</th>
             <td>22</td>
-            <td><b>23</b></td>
-            <td><b>23</b></td>
-            <td><b>23</b></td>
-            <td><b>25</b></td>
-            <td><b>25</b></td>
-            <td><b>25</b></td>
+            <td>23</td>
+            <td>23</td>
+            <td>23</td>
+            <td>25</td>
+            <td>25</td>
+            <td>25</td>
             <td>26</td>
             <td>26</td>
             <td>28</td>
             <td>31</td>
-            <td>42</td>
+            <th>42</th>
           </tr>
     </table>
-    <p> NOTE:  Spread, like shape and center, is a general description of the distribution, not a precise quantity</p>
+    <p> Q1: The median of the lower half (first six ages) is 23, (average of the two middle values: 23 and 23) </p>
+    <p> Q3: The median of the upper half (second six ages) is 26, (average of the two middle values: 25 and 26). </p>
+    <p> IQR = Q3 - Q1 = 26 - 23 = 3. </p>
+    <p> The IQR of 3 indicates that the middle 50% of player ages fall within a range of 23 to 26. </p>
+    <p> It’s a robust measure of spread, less affected by extreme values. </p>
+
+    
 {% endblock main_content %}
 {% block footer_content %}{% endblock footer_content %}
