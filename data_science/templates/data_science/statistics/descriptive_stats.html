@@ -218,7 +218,53 @@
     </ul>
     <h4> The Interquartile Range </h4>
     <p> The IQR (pronounced “eye-cue-are”) represents the spread of the middle 50% of values in a dataset. The IQR focuses on the central portion of the data, ignoring extreme values. </p>
-    <p> </p>
+    <p> Quartiles divide a dataset into four equal parts, providing valuable insights into data distribution. </p>
+    <ol>
+        <li>First Quartile (Q1), also known as the lower quartile, Q1 represents the 25th percentile. It’s the value below which 25% of the data falls. </li>
+        <li>Second Quartile (Q2), it divides the dataset into two equal halves. It’s the middle value—half the data falls below it, and half above it. </li>
+        <li>Third Quartile (Q3), also called the upper quartile, Q3 is the 75th percentile. It’s the value below which 75% of the data lies. </li>
+    </ol>
+    <p> The difference between the quartiles is called the interquartile range (IQR). It captures the spread of the central 50% of data, ignoring extreme values.</p>
+    <p>  IQR = Q3 - Q1 </p>
+
+    <p> Calculating the IQR for the Arsenal's first team: </p>
+    <ol>
+        <li> Sort the ages in ascending order. </li>
+        <li> Calculate the median of the lower half.</li>
+        <li> Calculate the median of the upper half.</li>
+    </ol>
+    <table border="1px">
+        <tr>
+            <th>Players:</th>
+            <td>Bukayo Saka</td>
+            <td>William Saliba</td>
+            <td>Jurrien Timber</td>
+            <td>Gabriel Martinelli</td>
+            <td>Kai Havertz</td>
+            <td>Martin Ødegaard</td>
+            <td>Declan Rice</td>
+            <td>Ben White</td>
+            <td>Gabriel Magalhães</td>
+            <td>David Raya</td>
+            <td>Thomas Partey</td>
+            <td> Mikel Arteta (coach)</td>
+        </tr>
+        <tr>
+            <th>Age:</th>
+            <td>22</td>
+            <td><b>23</b></td>
+            <td><b>23</b></td>
+            <td><b>23</b></td>
+            <td><b>25</b></td>
+            <td><b>25</b></td>
+            <td><b>25</b></td>
+            <td>26</td>
+            <td>26</td>
+            <td>28</td>
+            <td>31</td>
+            <td>42</td>
+          </tr>
+    </table>
     <p> NOTE:  Spread, like shape and center, is a general description of the distribution, not a precise quantity</p>
 {% endblock main_content %}
 {% block footer_content %}{% endblock footer_content %}
