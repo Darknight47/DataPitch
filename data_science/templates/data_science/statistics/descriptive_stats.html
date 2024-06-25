@@ -279,6 +279,20 @@
     <p> The variance helps us understand the spread of our data.  If the fireflies (ages) stick close together, the variance is low—they’re a tight-knit group. 
         But if they scatter far and wide, the variance is high.
     </p>
-
+    <p> 
+        <b>What is the variance of the ages in Arsenal’s first squad?</b>
+    </p>
+    <p> The formula to calculate the variance is <var>σ²</var> = Σ(xᵢ - μ)² / n</p>
+    <p> Population Variance: When you have data for the entire population, we divide by 𝑁. N = the total number of data points. <b> <var>σ²</var> = Σ(xᵢ - μ)² / n </b></p>
+    <p> Sample Variance: When you have a sample of data from a larger population, we divide by 𝑁 − 1.
+        (N−1) to correct for bias and ensure an unbiased estimate of the population variance. <b> <var>σ²</var> = Σ(xᵢ - μ)² / (n - 1) </b>
+    </p>
+    <ol> 
+        <li> Calculate the mean (average) of the ages </li>
+        <li> For each age, find the difference from the mean. Square each of these differences </li>
+        <li> Add up all the squared differences. </li>
+        <li> Divide this sum of squared differences by the number of observations minus 1. </li>
+    </ol>
+    <p> The variance of the ages in Arsenal's first squad is: </p>
 {% endblock main_content %}
 {% block footer_content %}{% endblock footer_content %}
