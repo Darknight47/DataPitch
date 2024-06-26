@@ -1,5 +1,6 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from .models import StatsConcept
 
 # Create your views here.
 def index(request):
@@ -14,3 +15,8 @@ def descriptive_stats(request):
 
 def inferential_stats(request):
     return render(request, "data_science/statistics/inferential_stats.html")
+
+def stats_concept_detail(request, text):
+    statsContent = get_object_or_404(StatsConcept, text=text)
+    context = {"statsContent": statsContent}
+    return render(request, 'data_science/statistics/stats_detail.html', context)

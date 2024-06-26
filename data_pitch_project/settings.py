@@ -33,7 +33,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     # My Own APPS
     'data_science',
-
+    # Installed Apps
+    'markdownx',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
