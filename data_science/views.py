@@ -11,15 +11,9 @@ def index(request):
 def stats(request):
     return render(request, "data_science/stats.html")
 
-def descriptive_stats(request):
-    return render(request, "data_science/statistics/descriptive_stats.html")
-
-def inferential_stats(request):
-    return render(request, "data_science/statistics/inferential_stats.html")
-
-def stats_markdown_content(request):
+def stats_markdown_content(request, slug):
     md = markdown.Markdown(extensions=["fenced_code"])
-    statsContent = StatsConcept.objects.first()
+    statsContent = get_object_or_404(StatsConcept, slug=slug)
     statsContent.content = md.convert(statsContent.content)
     context = {"statsContent": statsContent}
     return render(request, 'data_science/statistics/stats_detail.html', context)
