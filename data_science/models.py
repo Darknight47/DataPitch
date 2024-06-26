@@ -1,6 +1,4 @@
 from django.db import models
-from markdownx.models import MarkdownxField
-from markdownx.utils import markdownify
 
 # Create your models here.
 
@@ -14,9 +12,6 @@ class StatsConcept(models.Model):
     class Meta:
         verbose_name = "Statistic Content"
         verbose_name_plural = "Statistic Contents"
-        
-    def formatted_markdown(self):
-        return markdownify(self.content)
-    
+            
     def __str__(self):
         return self.title
