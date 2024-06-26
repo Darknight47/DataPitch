@@ -16,7 +16,7 @@ def descriptive_stats(request):
 def inferential_stats(request):
     return render(request, "data_science/statistics/inferential_stats.html")
 
-def stats_concept_detail(request, text):
-    statsContent = get_object_or_404(StatsConcept, text=text)
+def stats_markdown_content(request):
+    statsContent = StatsConcept.objects.first()
     context = {"statsContent": statsContent}
     return render(request, 'data_science/statistics/stats_detail.html', context)
