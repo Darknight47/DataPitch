@@ -11,3 +11,6 @@ def stats(request):
 
 def descriptive_stats(request):
     return render(request, "data_science/statistics/descriptive_stats.html")
+
+def inferential_stats(request):
+    return render(request, "data_science/statistics/inferential_stats.html")
