@@ -11,7 +11,9 @@ def index(request):
     #return HttpResponse("Welcome To DataScience Course")
 
 def stats(request):
-    return render(request, "data_science/stats.html")
+    concepts = StatsConcept.objects.all()
+    context = {"concepts": concepts}
+    return render(request, "data_science/statistics/stats.html", context)
 
 def stats_markdown_content(request, slug):
     md = markdown.Markdown(extensions=["fenced_code"])
