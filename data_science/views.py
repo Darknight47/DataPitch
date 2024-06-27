@@ -1,5 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
+
+from data_science.forms import DatascienceForm
 from .models import StatsConcept
 import markdown
 
@@ -17,3 +19,16 @@ def stats_markdown_content(request, slug):
     statsContent.content = md.convert(statsContent.content)
     context = {"statsContent": statsContent}
     return render(request, 'data_science/statistics/stats_concept.html', context)
+
+def add_ds_content(request):
+    if(request.method == "POST"):
+        form = DatascienceForm(request.POST)
+        if(form.is_valid()):
+            form.save()
+            return redirect("data_science:dsIndex")
+        else:
+            return render(request, "data_science/statistics/add_dsContent.html", context)
+    else:
+        form = DatascienceForm()
+        context = {'form': form}
+        return render(request, "data_science/statistics/add_dsContent.html", context)
