@@ -16,4 +16,4 @@ def stats_markdown_content(request, slug):
     statsContent = get_object_or_404(StatsConcept, slug=slug)
     statsContent.content = md.convert(statsContent.content)
     context = {"statsContent": statsContent}
-    return render(request, 'data_science/statistics/stats_detail.html', context)
+    return render(request, 'data_science/statistics/stats_concept.html', context)
