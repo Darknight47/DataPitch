@@ -4,7 +4,7 @@
         {% for statsConcept in concepts %}
             <li> <a href="{% url 'data_science:stats_concept' statsConcept.slug %}">{{ statsConcept.title }}</a> </li>
         {% endfor %}
-        <li> <a href='{% url "data_science:add_ds_content" %}'> ADD/EDIT DS CONTENT </a> </li>
+        <li> <a href='{% url "data_science:add_ds_content" %}'> ADD DS CONTENT </a> </li>
     </ul>
 {% endblock header_content %}
 {% block main_content %}{% endblock main_content %}

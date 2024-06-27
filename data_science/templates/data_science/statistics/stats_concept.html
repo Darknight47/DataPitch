@@ -2,6 +2,7 @@
 {% block header_content %}
     <ul>
         <li> HEJ FROM STATS </li>
+        <li> <a href='{% url "data_science:update_ds_concept" statsContent.slug %}'> UPDATE DS CONCEPT </a> </li>
     </ul>
 {% endblock header_content %}
 {% block main_content %}

@@ -34,3 +34,14 @@ def add_ds_content(request):
         form = DatascienceForm()
         context = {'form': form}
         return render(request, "data_science/statistics/add_dsContent.html", context)
+
+def update_ds_concept(request, slug):
+    concept = get_object_or_404(StatsConcept, slug=slug)
+    if (request.method == "POST"):
+        form = DatascienceForm(request.POST, instance=concept)
+        if form.is_valid():
+            form.save()
+            return redirect('data_science:stats_concept', slug=concept.slug)
+    else:
+        form = DatascienceForm(instance=concept)
+    return render(request, 'data_science/statistics/add_dsContent.html', {'form': form, 'concept': concept})
