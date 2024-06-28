@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 {% block header_content %}
     <ul>
-        <li> <a href='{% url "data_science:stats" %}'> Statistics </a></li>
-        <li> Machine Learning </li>
-        <li> Algorithms </li>
-        <li> Additional Essential Concepts </li>
+        {% for concept in ds_concepts %}
+            <li> <a href='{% url "data_science:stats" %}'>{{ concept.ds_concept_title }}</a> </li>
+        {% endfor %}
     </ul>
 {% endblock header_content %}
 {% block main_content %}{% endblock main_content %}

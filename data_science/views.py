@@ -2,12 +2,14 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
 from data_science.forms import DatascienceForm
-from .models import StatsConcept
+from .models import Concept, StatsConcept
 import markdown
 
 # Create your views here.
 def index(request):
-    return render(request, "data_science/index.html")
+    concepts = Concept.objects.all()
+    context = {"ds_concepts": concepts}
+    return render(request, "data_science/index.html", context)
     #return HttpResponse("Welcome To DataScience Course")
 
 def stats(request):
