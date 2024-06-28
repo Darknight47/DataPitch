@@ -17,7 +17,7 @@ class StatsConcept(models.Model):
 
 class DataScienceConcept(models.Model):
     ds_concept_title = models.CharField(max_length=200)
-    date_added = models.DateField(auto_new_add = True)
+    date_added = models.DateField(auto_now_add=True)
     concept_slug = models.SlugField(blank=True)
 
     class Meta:
