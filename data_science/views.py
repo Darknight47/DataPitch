@@ -29,11 +29,11 @@ def add_ds_content(request):
             form.save()
             return redirect("data_science:dsIndex")
         else:
-            return render(request, "data_science/statistics/add_dsContent.html", context)
+            return render(request, "data_science/statistics/add_edit_ds_content.html", context)
     else:
         form = DatascienceForm()
         context = {'form': form}
-        return render(request, "data_science/statistics/add_dsContent.html", context)
+        return render(request, "data_science/statistics/add_edit_ds_content.html", context)
 
 def update_ds_concept(request, slug):
     concept = get_object_or_404(StatsConcept, slug=slug)
@@ -44,4 +44,4 @@ def update_ds_concept(request, slug):
             return redirect('data_science:stats_concept', slug=concept.slug)
     else:
         form = DatascienceForm(instance=concept)
-    return render(request, 'data_science/statistics/add_dsContent.html', {'form': form, 'concept': concept})
+    return render(request, 'data_science/statistics/add_edit_ds_content.html', {'form': form, 'concept': concept})
