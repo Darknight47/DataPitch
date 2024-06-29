@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% block header_content %}
+    <h1> SUBTOPIC </h1>
     <ul>
-        <li> HEJ FROM STATS </li>
-    </ul>
+        {% for subtopic in concept_subtopics %}
+            <li> <a href=""> {{ subtopic.subtopic_title }}</a> </li>
+        {% endfor %}
+        {% comment %} <li> <a href='{% url "data_science:add_ds_content" %}'> ADD DS CONTENT </a> </li> {% endcomment %}
+    </ul> 
 {% endblock header_content %}
 {% block main_content %}
-    <h1> {{ statsContent.title }} </h1>
+    {% comment %}<h1> {{ statsContent.title }} </h1>
     <p> {{ statsContent.content|safe }} </p>
-    <p><a href='{% url "data_science:update_ds_concept" statsContent.slug %}'> UPDATE DS CONCEPT </a> </p>
+     <p><a href='{% url "data_science:update_ds_concept" statsContent.slug %}'> UPDATE DS CONCEPT </a> </p> {% endcomment %}
 {% endblock main_content %}
 {% block footer_content %}{% endblock footer_content %}

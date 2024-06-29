@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block header_content %}
+    <h1> TOPICS </h1>
     <ul>
         {% for topic in concept_topics %}
-            <li> <a href=""> {{ topic.topic_title }}</a> </li>
+            <li> <a href=' {% url "data_science:ds_subtopics" topic.concept.concept_slug topic.topic_slug %} '> {{ topic.topic_title }}</a> </li>
         {% endfor %}
         {% comment %} <li> <a href='{% url "data_science:add_ds_content" %}'> ADD DS CONTENT </a> </li> {% endcomment %}
     </ul> 

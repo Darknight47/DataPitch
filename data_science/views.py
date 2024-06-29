@@ -2,24 +2,30 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
 #from data_science.forms import DatascienceForm
-from .models import Concept, Concept_Topic
+from .models import Concept, Concept_Subtopic, Concept_Topic
 import markdown
 
 # Create your views here.
-def index(request): # DataScience-Concepts
+# DataScience-Concepts
+def ds_concepts(request): 
     concepts = Concept.objects.all()
     context = {"ds_concepts": concepts}
     return render(request, "data_science/index.html", context)
     #return HttpResponse("Welcome To DataScience Course")
 
-def stat_topics(request, concept_slug): # DataScience-Concept-Topics
+def ds_topics(request, concept_slug): # DataScience-Concept-Topics
     concept = get_object_or_404(Concept, concept_slug=concept_slug)
     topics = Concept_Topic.objects.filter(concept=concept)
     context = {"concept_topics": topics}
     return render(request, "data_science/statistics/stat_topic.html", context)
 
-def stat_subtopics_content(request, topic_slug):
-    
+def ds_subtopics(request, concept_slug, topic_slug):
+    #concept = get_object_or_404(Concept, concept_slug=concept_slug)
+    topic = get_object_or_404(Concept_Topic, topic_slug=topic_slug, concept__concept_slug=concept_slug)
+    subtopics = Concept_Subtopic.objects.filter(topic=topic)
+    context = {"concept_topic": topic, "concept_subtopics":subtopics}
+    return render(request, "data_science/statistics/stat_subtopic.html", context)
+
 # def stats_markdown_content(request, slug):
 #     md = markdown.Markdown(extensions=["fenced_code"])
 #     statsContent = get_object_or_404(StatsConcept, slug=slug)
