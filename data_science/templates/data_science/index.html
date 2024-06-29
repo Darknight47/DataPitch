@@ -2,7 +2,7 @@
 {% block header_content %}
     <ul>
         {% for concept in ds_concepts %}
-            <li> <a href='{% url "data_science:stats" %}'>{{ concept.ds_concept_title }}</a> </li>
+            <li> <a href='{% url "data_science:stats_concept" concept.concept_slug %}'>{{ concept.ds_concept_title }}</a> </li>
         {% endfor %}
     </ul>
 {% endblock header_content %}
