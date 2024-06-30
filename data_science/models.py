@@ -31,7 +31,7 @@ class Concept_Subtopic(models.Model):
     topic = models.ForeignKey(Concept_Topic, on_delete=models.CASCADE, related_name='datascience_topic')
     subtopic_title = models.CharField(max_length=200)
     date_added = models.DateField(auto_now_add=True)
-    subtopic_slug = models.SlugField(blank=True)
+    subtopic_slug = models.SlugField(unique=True)
     content = models.TextField()
 
     def __str__(self):

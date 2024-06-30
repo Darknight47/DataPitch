@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
-#from data_science.forms import DatascienceForm
+from data_science.forms import SubtopicForm
+
 from .models import Concept, Concept_Subtopic, Concept_Topic
 import markdown
 
@@ -34,6 +35,18 @@ def ds_subtopic_content(request, concept_slug, topic_slug, subtopic_slug):
     context = {"concept_subtopics":subtopics, "subtopic":subtopic, "subtopic_content": subtopic_content}
     return render(request, "data_science/statistics/stat_subtopic.html", context)
 
+def update_ds_concept(request, concept_slug, topic_slug, subtopic_slug):
+    topic = get_object_or_404(Concept_Topic, topic_slug=topic_slug, concept__concept_slug=concept_slug)
+    content = Concept_Subtopic.objects.filter(topic=topic).get(subtopic_slug=subtopic_slug)
+    if (request.method == "POST"):
+        form = SubtopicForm(request.POST, instance=content)
+        if form.is_valid():
+            form.save()
+            return redirect('data_science:ds_subtopics_content', concept_slug=concept_slug, topic_slug=topic_slug, subtopic_slug=subtopic_slug)
+    else:
+        form = SubtopicForm(instance=content)
+    return render(request, 'data_science/statistics/add_edit_ds_content.html', {'form': form, 'content': content})
+
 # def add_ds_content(request):
 #     if(request.method == "POST"):
 #         form = DatascienceForm(request.POST)
@@ -46,14 +59,3 @@ def ds_subtopic_content(request, concept_slug, topic_slug, subtopic_slug):
 #         form = DatascienceForm()
 #         context = {'form': form}
 #         return render(request, "data_science/statistics/add_edit_ds_content.html", context)
-
-# def update_ds_concept(request, slug):
-#     concept = get_object_or_404(StatsConcept, slug=slug)
-#     if (request.method == "POST"):
-#         form = DatascienceForm(request.POST, instance=concept)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('data_science:stats_concept', slug=concept.slug)
-#     else:
-#         form = DatascienceForm(instance=concept)
-#     return render(request, 'data_science/statistics/add_edit_ds_content.html', {'form': form, 'concept': concept})
