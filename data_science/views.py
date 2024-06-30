@@ -23,7 +23,18 @@ def ds_subtopics(request, concept_slug, topic_slug):
     #concept = get_object_or_404(Concept, concept_slug=concept_slug)
     topic = get_object_or_404(Concept_Topic, topic_slug=topic_slug, concept__concept_slug=concept_slug)
     subtopics = Concept_Subtopic.objects.filter(topic=topic)
-    context = {"concept_topic": topic, "concept_subtopics":subtopics}
+    context = {"top": topic, "concept_subtopics":subtopics}
+    return render(request, "data_science/statistics/stat_subtopic.html", context)
+
+def ds_subtopic_content(request, concept_slug, topic_slug, subtopic_slug):
+    md = markdown.Markdown(extensions=["fenced_code"])
+    topic = get_object_or_404(Concept_Topic, topic_slug=topic_slug, concept__concept_slug=concept_slug)
+    subtopics = Concept_Subtopic.objects.filter(topic=topic)
+    subtopic = subtopics.get(subtopic_slug=subtopic_slug)
+    subtopic_content = md.convert(subtopic.content)
+    print(type(subtopic_content))
+    print("CONTENT: ---------", subtopic_content)
+    context = {"concept_subtopics":subtopics, "subtopic":subtopic, "subtopic_content": subtopic_content}
     return render(request, "data_science/statistics/stat_subtopic.html", context)
 
 # def stats_markdown_content(request, slug):
