@@ -20,7 +20,6 @@ def ds_topics(request, concept_slug): # DataScience-Concept-Topics
     return render(request, "data_science/statistics/stat_topic.html", context)
 
 def ds_subtopics(request, concept_slug, topic_slug):
-    #concept = get_object_or_404(Concept, concept_slug=concept_slug)
     topic = get_object_or_404(Concept_Topic, topic_slug=topic_slug, concept__concept_slug=concept_slug)
     subtopics = Concept_Subtopic.objects.filter(topic=topic)
     context = {"top": topic, "concept_subtopics":subtopics}
@@ -32,17 +31,8 @@ def ds_subtopic_content(request, concept_slug, topic_slug, subtopic_slug):
     subtopics = Concept_Subtopic.objects.filter(topic=topic)
     subtopic = subtopics.get(subtopic_slug=subtopic_slug)
     subtopic_content = md.convert(subtopic.content)
-    print(type(subtopic_content))
-    print("CONTENT: ---------", subtopic_content)
     context = {"concept_subtopics":subtopics, "subtopic":subtopic, "subtopic_content": subtopic_content}
     return render(request, "data_science/statistics/stat_subtopic.html", context)
-
-# def stats_markdown_content(request, slug):
-#     md = markdown.Markdown(extensions=["fenced_code"])
-#     statsContent = get_object_or_404(StatsConcept, slug=slug)
-#     statsContent.content = md.convert(statsContent.content)
-#     context = {"statsContent": statsContent}
-#     return render(request, 'data_science/statistics/stats_concept.html', context)
 
 # def add_ds_content(request):
 #     if(request.method == "POST"):
