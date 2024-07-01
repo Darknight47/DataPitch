@@ -15,7 +15,7 @@
     <h1> {{ subtopic.subtopic_title }} </h1>
     <p> {{ subtopic_content|safe }} </p>
     {% if subtopic %}
-        <p><a href='{% url "data_science:update_ds_concept" subtopic.topic.concept.concept_slug subtopic.topic.topic_slug subtopic.subtopic_slug %}'> UPDATE DS CONCEPT </a> </p> 
+        <p><a href='{% url "data_science:update_ds_concept" subtopic.topic.concept.concept_slug subtopic.topic.topic_slug subtopic.subtopic_slug %}'> UPDATE THIS CONTENT </a> </p> 
     {% endif %}
 {% endblock main_content %}
 {% block footer_content %}{% endblock footer_content %}
